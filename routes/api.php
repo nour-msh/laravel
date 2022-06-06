@@ -23,5 +23,7 @@ Route::get('/', [TestController::class, 'palindrome']);
 Route::get('/time', [TestController::class, 'timeElapsed']);
 Route::get('/text', [TestController::class, 'textFile']);
 Route::get('/beer', [TestController::class, 'beerRecipe']);
+Route::get('/students', [TestController::class, 'stdGroups']);
+Route::get('/nominees', [TestController::class, 'findNominee']);
 
 

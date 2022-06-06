@@ -52,4 +52,20 @@ class TestController extends Controller{
         // echo $response;
 
     }
+
+    public function stdGroups(){
+        $array=["Hasan","Moe","Alex","Charbel","Jude"];
+
+
+
+
+
+    }
+
+    public function findNominee(){
+        $array=["Hasan","Moe","Alex","Charbel","Jude","Pablo"];
+        shuffle($array);
+        echo $array[0];
+
+    }
 }
