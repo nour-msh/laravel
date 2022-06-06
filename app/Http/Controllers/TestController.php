@@ -41,6 +41,9 @@ class TestController extends Controller{
 class TestController extends Controller{
     public function textFile(){
         $response = file_get_contents('https://icanhazdadjoke.com/slack');
+        // $text= json_decode($response);
+        echo $text->text
         
+
     }
 }
