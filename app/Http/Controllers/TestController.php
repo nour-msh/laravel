@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller{
 
-    public function palindrome(){
-        $words = explode(' ', $string);
+    public function palindrome($words){
+        $array=["level","madam","apple"];
         $count = 0;
         
-        foreach($words as $word) {
+        foreach($array as $word) {
             if(strrev($word) === $word) {
                 $count++;
             }
@@ -18,10 +18,9 @@ class TestController extends Controller{
         
         echo $count;
     }
-}
 
 
-class TestController extends Controller{
+
     public function timeElapsed(){
         $date1 = date_create("1732-04-14");
         $date2 = date();
@@ -35,15 +34,13 @@ class TestController extends Controller{
     //convert days to seconds
 
     }
-}
 
 
-class TestController extends Controller{
+
+
     public function textFile(){
         $response = file_get_contents('https://icanhazdadjoke.com/slack');
         // $text= json_decode($response);
-        echo $text->text
-        
-
+        echo $text->text;
     }
-}
+    }

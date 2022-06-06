@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', [TestController::class, 'palindrome'])->name("palindrome-count");
+Route::get('/', [TestController::class, 'palindrome']);
 Route::get('/time', [TestController::class, 'timeElapsed']);
 Route::get('/text', [TestController::class, 'textFile']);
 
