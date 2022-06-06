@@ -41,4 +41,15 @@ class TestController extends Controller{
         echo $data["attachments"][0]["text"];
     }
     
+
+    public function beerRecipe(){
+        $response = file_get_contents('https://api.punkapi.com/v2/beers');
+        $data= json_decode($response,true);
+        $recipe = $data[rand(0, count($data) - 1)];
+        $recipe_string = json_encode($recipe);
+        echo $recipe_string;
+        // $response = json_encode($recipe);
+        // echo $response;
+
+    }
 }
