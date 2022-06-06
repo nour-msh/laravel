@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', [TestController::class, 'palindrome']);
 Route::get('/time', [TestController::class, 'timeElapsed']);
 Route::get('/text', [TestController::class, 'textFile']);
-
+Route::get('/beer', [TestController::class, 'beerRecipe']);
 
 

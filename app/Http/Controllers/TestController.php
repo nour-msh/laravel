@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller{
 
-    public function palindrome($words){
+    public function palindrome(){
         $array=["level","madam","apple"];
         $count = 0;
         
@@ -23,16 +23,12 @@ class TestController extends Controller{
 
     public function timeElapsed(){
         $date1 = date_create("1732-04-14");
-        $date2 = date();
-
-    //difference between two dates
+        echo "Start date: ".$date1->format("Y-m-d")."<br>";
+        $date2 = date_create("2022-06-06");
+        echo "End date: ".$date2->format("Y-m-d")."<br>";
         $diff = date_diff($date1,$date2);
-
-    //count days
-       echo 'Days Count:'.$diff;
-
-    //convert days to seconds
-
+        echo $diff->format("%R%a days ");
+        echo strtotime('105973 days', 0);
     }
 
 
@@ -40,7 +36,9 @@ class TestController extends Controller{
 
     public function textFile(){
         $response = file_get_contents('https://icanhazdadjoke.com/slack');
-        // $text= json_decode($response);
-        echo $text->text;
+        $data= json_decode($response,true);
+        // echo $response->attachments;
+        echo $data["attachments"][0]["text"];
     }
-    }
+    
+}
